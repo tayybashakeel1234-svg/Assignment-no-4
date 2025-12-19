@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Design Agency</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
+    body{color:#111;background:#fff}
+
+    :root{
+      --green:#22c55e;
+      --light-green:#dcfce7;
+      --dark:#0f172a;
+      --gray:#6b7280;
+    }
+
+    /* ===== HEADER ===== */
+    header{
+      background:var(--light-green);
+      padding:22px 90px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+   
+    nav ul{list-style:none;display:flex;gap:32px;align-items:center}
+    nav a{text-decoration:none;color:#111;font-weight:500;font-size:14px}
+    .btn-outline{
+      padding:8px 18px;border:1px solid var(--green);border-radius:8px;color:var(--green);text-decoration:none;font-size:13px
+    }
+    .btn-fill{
+      padding:8px 18px;background:var(--green);border-radius:8px;color:#fff;text-decoration:none;font-size:13px
+    }
+
+    /* ===== HERO ===== */
+    .hero{
+        height: 600px;
+      background:var(--light-green);
+      padding:60px 90px;
+      display:grid;
+      grid-template-columns:1.1fr 0.9fr;
+      align-items:center;
+      gap:40px;
+      position: relative;
+    }
+    .hero h1{font-size:44px;font-weight:800;line-height:1.2;margin-bottom:20px}
+    .hero p{color:#374151;font-size:14px;margin-bottom:26px;max-width:420px}
+    .hero .cta{display:inline-block;background:var(--green);color:#fff;padding:12px 28px;border-radius:10px;text-decoration:none;font-size:14px}
+    .hero img{width:100%;max-width:420px}
+
+    /* ===== BRANDS ===== */
+    .brands{
+      margin-left: 10px;
+       border: 1px solid #F8FFF9;
+     width: 1060px;
+     padding-inline: 50px;
+     padding-top: 20px;
+     padding-bottom: 20px;
+     top: 570px;
+     background-color: #F8FFF9;
+     display: flex;
+      justify-content: space-between;
+      position: absolute;
+    }
+    .brands img{height:26px;opacity:.8}
+
+    /* ===== WHAT WE DO ===== */
+    .section{padding:90px}
+    .section small{color:var(--green);font-weight:600;font-size:12px}
+    .section h2{font-size:32px;font-weight:800;margin:12px 0 50px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+    .card{text-align:center}
+    .icon{
+      width:56px;height:56px;border-radius:14px;background:var(--light-green);
+      display:flex;align-items:center;justify-content:center;margin:0 auto 18px
+    }
+    .card h3{font-size:16px;font-weight:700;margin-bottom:8px}
+    .card p{font-size:13px;color:var(--gray);margin-bottom:14px}
+    .card a{font-size:13px;color:#111;text-decoration:none;font-weight:500}
+
+    /* ===== STATS ===== */
+    .stats{
+        display:grid;
+        grid-template-columns:repeat(4,1fr); 
+     margin-top:70px; text-align: center;
+     background-color: #FAFFFB;
+     padding: 50px;
+    }
+
+    .stat{text-align:center}
+    .stat h3{
+        color: #20B15A;
+        font-size:28px;
+        font-weight:800
+    }
+    .stat p{font-size:13px;color:var(--gray)}
+
+    .stat-2{
+        border-left: 1px solid #C4C4C480;
+        border-right: 1px solid #C4C4C480;
+    }
+
+    .stat-3{
+       border-right: 1px solid #C4C4C480;
+
+    }
+
+    /* ===== PORTFOLIO ===== */
+    .portfolio{padding:90px}
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:50px}
+    .project img{width:100%;border-radius:14px;margin-bottom:16px}
+    .project h4{font-size:16px;font-weight:700;margin-bottom:6px}
+    .project p{font-size:13px;color:var(--gray)}
+
+    /* ===== TESTIMONIALS ===== */
+    .testimonials{padding:90px}
+    .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:50px}
+    .review{padding:24px;border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,.06)}
+    .review p{font-size:13px;color:#374151;margin-bottom:18px}
+    .user{display:flex;align-items:center;gap:10px}
+    .user img{width:34px;height:34px;border-radius:50%}
+    .user h5{font-size:13px;font-weight:600}
+    .user span{font-size:12px;color:var(--gray)}
+
+    /* ===== SUBSCRIBE ===== */
+    .subscribe{text-align:center;padding:90px}
+    .subscribe h2{font-size:28px;font-weight:800;margin:12px 0}
+    .subscribe p{font-size:13px;color:var(--gray);margin-bottom:24px}
+    .sub-box{display:flex;justify-content:center;gap:10px}
+    .sub-box input{padding:12px 18px;width:260px;border-radius:10px;border:1px solid #ddd}
+    .sub-box button{padding:12px 24px;background:#f97316;border:none;border-radius:10px;color:#fff;font-size:13px}
+
+    @media(max-width:900px){
+      header,.hero,.brands,.section,.portfolio,.testimonials,.subscribe{padding:30px}
+      .hero{grid-template-columns:1fr;text-align:center}
+      .cards,.stats,.projects,.reviews{grid-template-columns:1fr}
+      nav ul{display:none}
+    }
+.footer {
+    background: #00c875; /* green background */
+    color: #000;
+    padding: 60px 0 20px;
+}
+
+.footer-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 80px;
+}
+
+/* LEFT */
+.footer-about h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.footer-about p {
+    font-size: 14px;
+    line-height: 1.6;
+    max-width: 320px;
+    margin-bottom: 20px;
+}
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: #0bbf6a;
+    color: #fff;
+    border-radius: 50%;
+    margin-right: 10px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* CENTER */
+.footer-links h3,
+.footer-address h3 {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.footer-links a {
+    display: block;
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+/* RIGHT */
+.footer-address p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* BOTTOM */
+.footer-bottom {
+    margin-top: 40px;
+    text-align: left;
+    width: 90%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 13px;
+}
+
+
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo"> <img style=" width: 150px; height: auto; " src="../Assignment no 4/Logo.png" alt=""></div>
+  <nav>
+    <ul>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Contact Us</a></li>
+      <li><a href="#" class="btn-outline">Login</a></li>
+      <li><a href="#" class="btn-fill">Register</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero">
+  <div>
+    <h1>Increase Your Customers Loyalty and Satisfaction</h1>
+    <p>We help businesses like yours earn more customers, standout from competitors, make more money</p>
+    <a href="#" class="cta">Get Started</a>
+  </div>
+  <img style="width: 700px; "  src="../Assignment no 4/hero section images/Group 38.png" alt="hero">
+</section>
+
+
+  <section class="brands">
+  <img src="../Assignment no 4/hero section images/logos_google.png">
+  <img src="../Assignment no 4/hero section images/Trello-logo-blue 1.png">
+  <img src="../Assignment no 4/hero section images/logos_monday.png">
+  <img src="../Assignment no 4/hero section images/Notion.png">
+  <img src="../Assignment no 4/hero section images/Slack.png">
+</section>
+
+<section class="section">
+  <small>WHAT WE DO</small>
+  <h2>We provide the Perfect Solution to your business growth</h2>
+
+  <div class="cards">
+    <div class="card">
+      <div class="icon"> <img style="width: 20px; height: 20px;" src="../Assignment no 4/What we do/Grow Your Business.png" alt=""></div>
+      <h3>Grow Your Business</h3>
+      <p>We help identify the best ways to improve your business</p>
+      <a href="#">Learn More →</a>
+    </div>
+    <div class="card">
+      <div class="icon"> <img style="width: 20px; height: 20px;" src="../Assignment no 4/What we do/Improve brand loyalty.png" alt=""> </div>
+      <h3>Improve brand loyalty</h3>
+      <p>We help identify the best ways to improve your business</p>
+      <a href="#">Learn More →</a>
+    </div>
+    <div class="card">
+      <div class="icon"> <img style="width: 20px; height: 20px;" src="../Assignment no 4/What we do/Improve Business Model.png" alt=""> </div>
+      <h3>Improve Business Model</h3>
+      <p>We help identify the best ways to improve your business</p>
+      <a href="#">Learn More →</a>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat-1"> <img style="width: 40px; height: 40px;" src="../Assignment no 4/What we do/Completed Projects.png" alt=""> 
+        <p>Completed Projects</p> 
+        <h3 style="color: #20B15A;"> 100+</h3> 
+    </div>
+    <div class="stat-2"> <img style="width: 40px; height: 40px;" src="../Assignment no 4/What we do/Customer Satisfaction.png" alt=""> 
+        <p>Customer Satisfaction</p> 
+        <h3 style="color: #20B15A;"> 20%</h3> 
+    </div>
+    <div class="stat-3"> 
+        <img style="width: 40px; height: 40px;" src="../Assignment no 4/What we do/Raised by Clients.png" alt=""> 
+        <p>Raised by Clients</p> 
+        <h3 style="color: #20B15A;"> $10M</h3> 
+    </div>
+    <div class="stat-4"> <img style="width: 40px; height: 40px;" src="../Assignment no 4/What we do/Years in Business.png" alt=""> 
+        <p>Years in Business</p> 
+        <h3 style="color: #20B15A;"> 2 yrs</h3> 
+    </div>
+  </div>
+</section>
+
+<section class="portfolio">
+  <small style="color: #20B15A;">OUR PORTFOLIO</small>
+  <br>
+  <h2>We provide the Perfect Solution to your business growth</h2>
+<br>
+<br>
+<br>
+  <div class="projects">
+    <div class="project">
+      <img src="../Assignment no 4/Digital Marketing Agency Website/Digital Marketing Agency Website 1.png">
+      <h4>Digital Marketing Agency Website</h4>
+      <p>This is a website for a client who wants to achieve their goals.</p>
+    </div>
+    <div class="project">
+      <img src="../Assignment no 4/Digital Marketing Agency Website/Digital Marketing Agency Website 2.png">
+      <h4>Digital Marketing Agency Website</h4>
+      <p>This is a website for a client who wants to achieve their goals.</p>
+    </div>
+     <div class="project">
+      <img src="../Assignment no 4/Digital Marketing Agency Website/Digital Marketing Agency Website 3.png">
+      <h4> Digital Marketing Agency Website </h4>
+      <p>This is a website for a client who wants to achieve their goals.</p>
+    </div>
+     <div class="project">
+      <img src="../Assignment no 4/Digital Marketing Agency Website/Digital Marketing Agency Website 4.png">
+      <h4>Digital Marketing Agency Website</h4>
+      <p>This is a website for a client who wants to achieve their goals.</p>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials">
+<br>
+  <small style="color: #20B15A;">TESTIMONIALS</small>
+  <h2>See What Our Customer Say About Us</h2>
+
+  <div class="reviews">
+    <div class="review">
+      <p>Thank You for your service. I am very pleased with the result.</p>
+      <div class="user"><img src="https://randomuser.me/api/portraits/women/44.jpg"><div><h5>Emily Stones</h5><span>CEO, Marketing Guru</span></div></div>
+    </div>
+    <div class="review">
+      <p>Thank You for your service. I am very pleased with the result.</p>
+      <div class="user"><img src="https://randomuser.me/api/portraits/women/65.jpg"><div><h5>Emily Stones</h5><span>CEO, Marketing Guru</span></div></div>
+    </div>
+    <div class="review">
+      <p>Thank You for your service. I am very pleased with the result.</p>
+      <div class="user"><img src="https://randomuser.me/api/portraits/women/68.jpg"><div><h5>Emily Stones</h5><span>CEO, Marketing Guru</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="subscribe">
+  <small style="color: #00c875;">SUBSCRIBE</small>
+  <h2>Subscribe To Get The Latest News About Us</h2>
+  <p>Please drop your email below to get daily update about what we do</p>
+  <div class="sub-box">
+    <input type="email" placeholder="Enter Your Email Address">
+    <button>Subscribe</button>
+  </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-container">
+
+        <!-- LEFT -->
+        <div class="footer-about">
+            <h2>WEB LOGO</h2>
+            <p>
+                Some footer text about the Agency.
+                Just a little description to help people understand you better
+            </p>
+
+            <div class="social-icons">
+                <a href="#">f</a>
+                <a href="#">t</a>
+                <a href="#">in</a>
+                <a href="#">ig</a>
+            </div>
+        </div>
+
+        <!-- CENTER -->
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <a href="#">Services</a>
+            <a href="#">Portfolio</a>
+            <a href="#">About Us</a>
+            <a href="#">Contact Us</a>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="footer-address">
+            <h3>Address</h3>
+            <p>
+                Design Agency Head Office.<br>
+                Airport Road<br>
+                United Arab Emirate
+            </p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        Copyright Design Agency 2022
+    </div>
+</footer>
+
+
+</body>
+</html>
